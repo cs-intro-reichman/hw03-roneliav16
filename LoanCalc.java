@@ -85,7 +85,7 @@ public class LoanCalc {
 	private static double endBalance(double loan, double rate, int n, double payment) {
 		double balance = loan;
 		for(int i = 0; i < n; i++) { // This loop return the remain balance for given payment.
-			balance = (balance - payment) * rate;
+			balance = (balance - payment) * ((rate / 100) + 1);
 		}
 		return balance;
 	}
