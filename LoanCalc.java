@@ -41,10 +41,10 @@ public class LoanCalc {
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
 		double periodicalPayment = loan / n;
 		double balance = LoanCalc.endBalance(loan, rate, n, periodicalPayment); // This statement calls to another endBalance function to 
-		iterationCounter = 1;													// culculate the the remain balance for this periodical payment
+		iterationCounter = 0;													// culculate the the remain balance for this periodical payment
 
 		while((Math.abs(balance)) >= epsilon && (balance >= 0)) { // The loop stops when the balance stops on a number that very close to 0.
-			periodicalPayment += epsilon / 10;  // this statement increase the annual payment by very tiny steps to get a the accuarate result
+			periodicalPayment += epsilon;  // this statement increase the annual payment by very tiny steps to get a the accuarate result
 			balance = LoanCalc.endBalance(loan, rate, n, periodicalPayment); 
 			iterationCounter++;  // Add 1 to the counter of iteration
 		}
@@ -63,9 +63,9 @@ public class LoanCalc {
 		double L = (loan / n), H = loan; // L - lower payment, H - higher payment
 		double g = (H + L) / 2; // g - the midlle of H and L
 		double balance = LoanCalc.endBalance(loan, rate, n, g); // This statement calls to another endBalance function to culculate the the remain balance for this periodical payment
-		iterationCounter = 1;	// Reset the variable to the other search	 
+		iterationCounter = 0;	// Reset the variable to the other search	 
 
-		while((Math.abs(balance)) >= epsilon) { // The loop stops when the balance stops on a number that very close to 0.
+		while((Math.abs(H - L)) >= epsilon) { // The loop stops when the balance stops on a number that very close to 0.
 			if(balance > 0) {
 				L = g;
 			} else {
