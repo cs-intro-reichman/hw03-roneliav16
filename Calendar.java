@@ -1,7 +1,7 @@
 /** 
  * Prints the calendars of all the years in the 20th century.
  */
-public class Calendar1 {	
+public class Calendar {	
     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
@@ -20,25 +20,26 @@ public class Calendar1 {
 	    int debugDaysCounter = 0; 
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
-		int sundays = 0;
-	 	while (year < 2000) {
+		int userYear = Integer.parseInt(args[0]);
+	 	while (year < userYear) {
+			advance();
+	 		debugDaysCounter++;
+	 		//// If you want to stop the loop after n days, replace the condition of the
+	 		//// if statement with the condition (debugDaysCounter == n)
+	 //		if (debugDaysCounter == 365001) { 
+	 //			break;
+	 //		}
+        }
+		while (year < (userYear + 1)) {
 			System.out.print(dayOfMonth + "/" + month + "/" + year);
 			if(dayOfWeek == 1 &&  dayOfMonth == 1) {
 				System.out.println(" Sunday");
-				sundays++;
 			} else {
 				System.out.println();
 			}
 			advance();
 	 		debugDaysCounter++;
-	 		//// If you want to stop the loop after n days, replace the condition of the
-	 		//// if statement with the condition (debugDaysCounter == n)
-	 		if (debugDaysCounter == 365001) { 
-	 			break;
-	 		}
-			System.out.println("During the 20th century, " +  sundays + "fell on the first day of the month");
         }
-	 	//// Write the necessary ending code here
 	 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
