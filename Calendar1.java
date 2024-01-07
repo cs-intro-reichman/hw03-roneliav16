@@ -37,7 +37,7 @@ public class Calendar1 {
 	 			break;
 	 		}
         }
-			System.out.println("During the 20th century, " +  sundays + " fell on the first day of the month");
+			System.out.println("During the 20th century, " +  sundays + " Sundays fell on the first day of the month");
 	 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
