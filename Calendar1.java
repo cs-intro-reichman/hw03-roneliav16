@@ -36,9 +36,8 @@ public class Calendar1 {
 	 		if (debugDaysCounter == 365001) { 
 	 			break;
 	 		}
-			System.out.println("During the 20th century, " +  sundays + " fell on the first day of the month");
         }
-	 	//// Write the necessary ending code here
+			System.out.println("During the 20th century, " +  sundays + " fell on the first day of the month");
 	 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
