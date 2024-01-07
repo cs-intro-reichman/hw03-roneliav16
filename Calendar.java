@@ -88,8 +88,8 @@ public class Calendar {
 			case 7: return 31;
 			case 8: return 31;
 			case 9: return 30;
-			case 10: return 30;
-			case 11: return 31;
+			case 10: return 31;
+			case 11: return 30;
 			case 12: return 31;
 		}
 		return 0;
