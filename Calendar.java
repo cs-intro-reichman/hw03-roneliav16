@@ -32,7 +32,7 @@ public class Calendar {
         }
 		while (year < (userYear + 1)) {
 			System.out.print(dayOfMonth + "/" + month + "/" + year);
-			if(dayOfWeek == 1 &&  dayOfMonth == 1) {
+			if(dayOfWeek == 1) {
 				System.out.println(" Sunday");
 			} else {
 				System.out.println();
@@ -63,11 +63,9 @@ public class Calendar {
 				month++;
 				dayOfMonth = 1;
 				nDaysInMonth = nDaysInMonth(month, year);
-
 			}
 		}
 	 } 
-		 
     // Returns true if the given year is a leap year, false otherwise.
 	private static boolean isLeapYear(int year) {
 		boolean ifLeap = ((year % 400) == 0) || ((year % 4) == 0) && ((year % 100) != 0);
